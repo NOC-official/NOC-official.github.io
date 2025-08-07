@@ -65,3 +65,5 @@ window.addEventListener('resize', function () {
         navMenu.classList.remove('active');
     }
 });
+
+//["Dreams", "Quality", "An exagerated price", "Stupid machines", "Planes", "Speed", "Italian soul", "Tribute to Ivano", "Adrenaline"]
