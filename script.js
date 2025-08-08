@@ -66,4 +66,31 @@ window.addEventListener('resize', function () {
     }
 });
 
-//["Dreams", "Quality", "An exagerated price", "Stupid machines", "Planes", "Speed", "Italian soul", "Tribute to Ivano", "Adrenaline"]
+// Typing animation
+typeAnimation(["Dreams", "Quality", "Exagerated Prices", "Stupid Machines", "Planes", "Speed", "Italian Soul", "Tribute To Ivano", "Adrenaline"], 200, 800, "<i>", "</i> Not Only Cars")
+
+async function typeAnimation(texts, type, pause, prefix, suffix) {
+    let result = "";
+    let output = "";
+    for (let j = 0; j < texts.length; j++) {
+        for (let i = 0; i < texts[j].length; i++) {
+            result += texts[j].substr(i, 1);
+            output = prefix + result + suffix;
+            document.getElementById("typeAnimation").innerHTML = output;
+            await sleep(type);
+        }
+        await sleep(pause);
+        for (let y = 1; y <= texts[j].length; y++) {
+            result = texts[j].slice(0, -y);
+            output = prefix + result + suffix;
+            document.getElementById("typeAnimation").innerHTML = output;
+            await sleep(type / 2);
+        }
+        await sleep(type);
+    }
+    await typeAnimation(texts, type, pause, prefix, suffix);
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
