@@ -70,6 +70,10 @@ nav {
     animation-delay: 0.4s;
 }
 
+.nav-item:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
 .nav-link {
     color: white;
     text-decoration: none;
